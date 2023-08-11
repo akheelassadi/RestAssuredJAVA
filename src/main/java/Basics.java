@@ -1,6 +1,8 @@
 import Files.PayLoad;
+import Files.Reusbales;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
+import org.testng.Assert;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -16,7 +18,7 @@ public class Basics {
 
         System.out.println(response);
 
-        JsonPath js = new JsonPath(response);
+        JsonPath js = Reusbales.rawToJson(response);
         String place_ID = js.getString("place_id");
 
         System.out.println(place_ID);
@@ -33,12 +35,12 @@ public class Basics {
                 .then().assertThat().statusCode(200).body("address", equalTo("Udupi"))
                 .extract().response().asString();
 
-        JsonPath js1 = new JsonPath(getNewResponse);
+        JsonPath js1 = Reusbales.rawToJson(getNewResponse);
         String newPlace = js1.getString("address");
 
-        System.out.println(newPlace);
+        //System.out.println(newPlace);
 
-        Assert.assertEqual
+        Assert.assertEquals(newPlace, updatedPlace);
 
     }
 }
