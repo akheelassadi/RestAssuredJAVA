@@ -1,5 +1,5 @@
 import Files.PayLoad;
-import Files.Reusbales;
+import Files.Reusabales;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
@@ -18,7 +18,7 @@ public class Basics {
 
         System.out.println(response);
 
-        JsonPath js = Reusbales.rawToJson(response);
+        JsonPath js = Reusabales.rawToJson(response);
         String place_ID = js.getString("place_id");
 
         System.out.println(place_ID);
@@ -35,7 +35,7 @@ public class Basics {
                 .then().assertThat().statusCode(200).body("address", equalTo("Udupi"))
                 .extract().response().asString();
 
-        JsonPath js1 = Reusbales.rawToJson(getNewResponse);
+        JsonPath js1 = Reusabales.rawToJson(getNewResponse);
         String newPlace = js1.getString("address");
 
         //System.out.println(newPlace);

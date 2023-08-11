@@ -2,7 +2,7 @@ package Files;
 
 import io.restassured.path.json.JsonPath;
 
-public class Reusbales {
+public class Reusabales {
 
     public static JsonPath rawToJson(String response)
     {
