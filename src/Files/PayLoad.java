@@ -85,4 +85,20 @@ public class PayLoad {
                 "\"author\":\"John foe\"\n" +
                 "}\n";
     }
+
+    public static String CreatIssue() {
+        return "{\n" +
+                "    \"fields\": {\n" +
+                "       \"project\":\n" +
+                "       {\n" +
+                "          \"key\": \"TEST\"\n" +
+                "       },\n" +
+                "       \"summary\": \"Isse create from rest api automation\",\n" +
+                "       \"description\": \"This story is created while learning rest api automation\",\n" +
+                "       \"issuetype\": {\n" +
+                "          \"name\": \"Story\"\n" +
+                "       }\n" +
+                "   }\n" +
+                "}";
+    }
 }
